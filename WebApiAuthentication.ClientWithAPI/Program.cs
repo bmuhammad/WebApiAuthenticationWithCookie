@@ -12,6 +12,12 @@ builder.Services.AddAuthentication(
     {
         options.LoginPath = "/Account/Login"; //refers to Login() method in Account Controller
         options.LogoutPath= "/Account/Logout"; //refers to Logout() method in Account Controller
+      
+        //can upgrade or tighten security by the following
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Strict;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    
     });
 
 

@@ -38,6 +38,7 @@ public class AccountController : Controller
             var authProperties = new AuthenticationProperties
             {
                 //can add code for refreshing tokens. defaults will be set if nothing is added.
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(20)
             };
 
            await  HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
