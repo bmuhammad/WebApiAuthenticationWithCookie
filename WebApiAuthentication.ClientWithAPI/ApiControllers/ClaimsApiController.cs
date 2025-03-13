@@ -4,6 +4,10 @@ using System.Security.Claims;
 
 namespace WebApiAuthentication.ClientWithAPI.ApiControllers;
 
+/// <summary>
+/// Decorate to authorize session. Do this on controller also
+/// </summary>
+[Authorize]
 [Route("api/claims")]
 [ApiController]
 public class ClaismsApiController : ControllerBase
